@@ -1,0 +1,69 @@
+#GDB
+  gdb ./SimpleDemo
+  run 10 20
+  breakpoint 8
+  delete breakpoints
+
+
+
+#ASM FILE STRUCTURE
+.data
+  - All initialized_data
+    Hello World String declared here
+.bss
+  - All uninitialized data
+.text
+  - program instructions
+    _start: 
+      Main() routin
+      - This is where the program instructions are written, the executable code.  When
+you  write these instructions there needs to be place or label where the
+assembler knows this is the start of the program.
+      If you had a library you would export those libraries here so they can be
+      called.
+
+
+Syscalls arguments
+  EAX - system call number
+  EBX - first argument
+  ECX - second argument
+  EDX - third argument
+  ESI - fourth argument
+  EDI - fifth argument
+
+
+exit()
+movl $1, %eax - puts the number one in eax
+movl $0, %ebx - "status" is lets say "0" - EBX must be loaded with "0"
+Raise the software interrupt 0x80
+
+.text
+  .globl_start
+  _start:
+    movl $1, %eax
+    movl $0, %ebx
+    int 0x80
+
+#COMPILING & RUNNING
+as -o JustExit.o JustExit.s
+ld -o JustExit JustExit.o
+./JustExit
+
+write() - to print "Hello World"
+  syscall
+    ssize_t write(int fd, const void *buf, size_t count);
+      sys call number for write() is 4 (store in EAX)
+      fd = 1 STDOUT (in EBX) - file descriptor for linux
+      Buf = pointer to memory containing "Hello World" string (in ECX)
+      Count = string length (in EDX)
+
+exit() - to gracefully exit program
+
+
+
+
+
+
+
+
+
