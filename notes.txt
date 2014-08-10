@@ -1,4 +1,22 @@
 ##### PART 1 - OVERVIEW #####
+
+  Assembly is hard to learn. So is any language you don't already know. Try learning (really learn-ing) APL, Prolog, or Smalltalk sometime. Once you learn Pascal, learning another language like C, BASIC, FORTRAN, Modula-2, or Ada is fairly easy because these languages are quite similar to Pascal. On the other hand, learning a dissimilar language like Prolog is not so simple. Assembly language is also quite dif-ferent from Pascal. It will be a little harder to learn than one of the other Pascal-like languages. However, learning assembly isn't much more difficult than learning your first programming language. 
+
+  Assembly is hard to read and understand. It sure is, if you don't know it. Most people who make this statement simply don't know assembly. Of course, it's very easy to write impossible-to-read assembly language programs. It's also quite easy to write impossible-to-read C, Prolog, and APL programs. With experience, you will find assembly as easy to read as other languages. 
+
+  Assembly is hard to debug. Same argument as above. If you don't have much experience debug-ging assembly language programs, it's going to be hard to debug them. Remember what it was like finding bugs in your first Pascal (or other HLL) programs? Anytime you learn a new programming language you'll have problems debugging programs in that language until you gain experience. 
+
+
+
+CPU - Central Processing Unit
+Memory - Where things are stored at runtime
+I/O Devices - Keyboard, Monitor, Mouse, etc..
+
+These communicate using the system bus.  We won't get into detail how the system
+bus works so we can get to programming.
+
+
+
   Control Unit - Retrieves / Decode Instructions, Retrieves / Store data in memory
   Execution Unit - Actual execution of instruction happens here
     When a cpu is executing instructions it actually requires some internal memory locations in order to do those calculations ( registers )
