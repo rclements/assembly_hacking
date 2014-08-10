@@ -94,10 +94,52 @@ bus works so we can get to programming.
   ld -o SimpleDemo SimpleDemo.o
   ./SimpleDemo
 
+  ps aux | grep SimpleDemo
+  vim /proc/2335/maps
+
+  Show the permissions these segments have with r-xp
+
+  This shows virtual memory and where the process is assigned
+
+  Quit the program and show the new PID for the new instance
+    ./SimpleDemo
+    ps aux | grep SimpleDemo
+    vim /proc/2335/maps
+    
+    note the stack has moved to a different address
+    the point I'd like to mention is in order to protect against attacks and
+    buffer overlow virtual address randomization was implemented as of the 2.6 linux
+    kernel
+
+  So everytime you run the program the stack will not be located in the same
+  section to deter against exploits
+
+  But we go about and look at this a different way by switching off the
+  randomization
+
+  vim /proc/sys/kernel/randomize_va_space
+
   #GDB
     gdb ./SimpleDemo
     run 10 20
+ 
+    disassemble main
+    #show the various memory locations in the process and show the instruction
+    #which is in that location
+
+    list 1
     breakpoint 8
+    run 10 20
+    print x
+    print y
+    print z
+    info registers
+
+    help x
+    x lets you view and examine memory
+    10 is a in hex
+    20 is 14 in hex
+
     delete breakpoints
 
 
