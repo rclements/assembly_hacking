@@ -1,0 +1,10 @@
+
+  # Hello World File
+
+  vim /usr/include/asm/unistd.h
+
+  as -gstabs -o HelloWorld.o HelloWorld.s
+  ld -o HelloWorld HelloWorld.o
+  ./HelloWorld
+
+
