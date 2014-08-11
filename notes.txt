@@ -75,7 +75,7 @@ bus works so we can get to programming.
     FS
     GS
 
-  Intruction Pointer Register
+  Instruction Pointer Register
     Points to the instruction which the cpu is executing 
     EIP
 
