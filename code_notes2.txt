@@ -7,4 +7,6 @@
   ld -o HelloWorld HelloWorld.o
   ./HelloWorld
 
-
+  gdb HelloWorld
+  break 20
+  info registers
